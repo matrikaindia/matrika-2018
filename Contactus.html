@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<div   class="ContentWrapper container-fluid">
+  <div class="container-fluid ">
+      
+      <div>
+         <div id="contact" class="spacer">
+
+<div class="container contactform center">
+<h2 class="text-center  wowload fadeInUp">Contact us</h2>
+<?php 
+if(isset($_POST['email']) && isset($_POST['name']) && isset($_POST['message'])){
+$mail_message = '<html><body><table> <tr><td>Hello Admin, </td></tr>';
+$mail_message .= '<tr><td>New contact on your website. Please check following details :- </td></tr>';
+$mail_message .= '<tr><td>Name : '.$_POST['name'].'</td></tr>';
+$mail_message .= '<tr><td>Email : '.$_POST['email'].'</td></tr>';
+$mail_message .= '<tr><td>Message : '.$_POST['message'].'</td></tr>';
+$mail_message .= '<tr><td> Thanks </table></body></html>';
+
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+ 
+// Create email headers
+/*$headers .= 'From: '.$_POST['email']."\r\n".
+    'Reply-To: '.$_POST['email']."\r\n" .
+    'X-Mailer: PHP/' . phpversion();*/
+
+$to = 'matrika.india@gmail.com';
+$subject = 'New Contact';
+$from = $_POST['email'];
+ 
+// Sending email
+if(mail($to, $subject, $mail_message, $headers )){
+    echo "<p style='color:green; font-size:13px;text-align:center;'>Your mail has been sent successfully.</p>";
+} else{
+    echo "<p style='color:red; font-size:13px;text-align:center;'>Unable to send email. Please try again.</p>";
+}
+
+
+}
+?>
+  <div class="row wowload fadeInLeftBig">      
+      <div class="col-sm-6 col-sm-offset-3 col-xs-12">     
+          <form method='post' action=''> 
+        <input type="text" placeholder="Name" required name='name'>
+        <input type="email" placeholder="email" required name='email'>
+        <textarea rows="5" placeholder="Message" required name='message'></textarea>
+        <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i> Send</button>
+          </form>
+      </div>
+  </div>
+    </div>  
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title">Title</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->    
+</div>
