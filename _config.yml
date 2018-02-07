@@ -1,0 +1,40 @@
+# the site details
+title: Matrika India
+
+# something about me
+author:
+  name: Sandeep Gupta
+  github: sangupta
+  email: sandy.pec@gmail.com
+  url: https://sangupta.com
+
+# are we publicly serving
+serving_publicly: true
+
+# code syntax highlighter to use
+highlighter: rouge
+markdown: kramdown
+
+# exclude following files from build
+exclude: [ "bower.json", "Gemfile", "Gemfile.lock", "README.md", "package.json" ]
+
+# used to indicate where we split up post and excerpt
+excerpt_separator: <!-- break here -->
+
+# file format encodings
+encoding: utf-8
+
+# used in sitemap to produce absolute urls
+url: https://matrika-india.org
+domain: matrika-india.org
+
+# disable custom plugins
+safe: true
+
+# plugins approved to be used
+gems:
+  - github-pages
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-paginate
+  - jekyll-avatar
