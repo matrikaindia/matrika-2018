@@ -39,3 +39,5 @@ target/*
 /target
 /target/
 Gemfile.lock
+_site/
+
